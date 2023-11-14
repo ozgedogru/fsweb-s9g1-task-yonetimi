@@ -5,6 +5,8 @@ import TaskForm from "./TaskForm";
 import TaskHookForm from "./TaskHookForm";
 import PeopleForm from "./PeopleForm";
 import { initialTasks, initialTeam } from "./data";
+import { ToastContainer, Flip, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [tasks, setTasks] = useState(initialTasks);
@@ -23,6 +25,7 @@ function App() {
     setTasks((prev) =>
       prev.map((t) => {
         if (t.id === id) {
+          toast.success("Task tamamlandi.");
           return { ...t, status: "yapıldı" };
         }
         return t;
@@ -66,6 +69,12 @@ function App() {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={3000}
+        transition={Flip}
+        theme="dark"
+      />
     </div>
   );
 }

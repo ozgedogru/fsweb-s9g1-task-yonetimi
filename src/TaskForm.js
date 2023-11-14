@@ -1,4 +1,3 @@
-import { nanoid } from "nanoid";
 import { useForm } from "react-hook-form";
 
 // const formSemasi = Yup.object().shape({
@@ -24,7 +23,6 @@ const TaskForm = ({ kisiler, submitFn }) => {
       description: "",
       people: [],
       status: "yapılacak",
-      id: nanoid(5),
     },
     mode: "all",
   });
